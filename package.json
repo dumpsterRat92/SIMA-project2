@@ -1,0 +1,23 @@
+{
+  "name": "gamequest",
+  "version": "1.0.0",
+  "description": "## Overview Welcome to GameQuest! This website is designed to help you organize and enjoy game nights with your friends and family. Whether you're a board game enthusiast or just looking for some fun activities to do together, this platform has got you covered. With features like game categorization, score tracking, and easy-to-use spreadsheets, planning your game night has never been easier.",
+  "main": "server.js",
+  "scripts": {
+    "test": "doot",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dumpsterRat92/SIMA-project2.git"
+  },
+  "keywords": [
+    "borger"
+  ],
+  "author": "lpjgvz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dumpsterRat92/SIMA-project2/issues"
+  },
+  "homepage": "https://github.com/dumpsterRat92/SIMA-project2#readme"
+}
