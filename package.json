@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/dumpsterRat92/SIMA-project2/issues"
   },
-  "homepage": "https://github.com/dumpsterRat92/SIMA-project2#readme"
+  "homepage": "https://github.com/dumpsterRat92/SIMA-project2#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-generator": "^4.16.1"
+  }
 }
