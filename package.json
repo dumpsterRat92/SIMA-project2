@@ -22,6 +22,7 @@
   "homepage": "https://github.com/dumpsterRat92/SIMA-project2#readme",
   "dependencies": {
     "express": "^4.19.2",
-    "express-generator": "^4.16.1"
+    "express-generator": "^4.16.1",
+    "sequelize": "^6.37.2"
   }
 }
