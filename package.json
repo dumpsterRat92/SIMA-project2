@@ -21,10 +21,15 @@
   },
   "homepage": "https://github.com/dumpsterRat92/SIMA-project2#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-session-sequelize": "^7.1.7",
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "express": "^4.19.2",
     "express-generator": "^4.16.1",
+    "express-handlebars": "^5.3.5",
+    "express-session": "^1.18.0",
+    "handlebars": "^4.7.8",
     "mysql2": "^3.9.3",
     "sequelize": "^6.37.2"
   }
