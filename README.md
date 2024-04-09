@@ -13,35 +13,6 @@ npm install
 5. **Start the Server**:
 node server.js
 6. **Explore the Website**: Open your web browser and navigate to 'http://localhost:3001' to start exploring the GameQuest website~!
-## File Structure
-- **config/**
-  - `config.js`: Sequelize configuration to connect to your MySQL database.
-- **controllers/**
-  - `gamesController.js`: Controller for game-related routes.
-  - `usersController.js`: Controller for user-related routes.
-- **db/**
-  - `schema.sql`: MySQL database schema.
-- **models/**
-  - `index.js`: Imports all models and exports them.
-  - `game.js`: Game model.
-  - `user.js`: User model.
-- **node_modules/**: Created by npm. Holds all your project dependencies.
-- **public/**
-  - **assets/**
-    - **css/**: Stylesheets.
-    - **js/**: Front-end JavaScript.
-  - **images/**: Store images for your UI.
-- **views/**
-  - **layouts/**
-    - `main.handlebars`: Main layout.
-  - **partials/**
-    - `game.handlebars`: Partials for game elements.
-  - `home.handlebars`: Home page template.
-  - `dashboard.handlebars`: User dashboard template.
-- `.env`: Environment variables (API keys, DB credentials).
-- `.gitignore`: Specifies intentionally untracked files to ignore.
-- `package.json`: Project manifest.
-- `server.js`: Entry point of your application.
 
 
 Enjoy your game night with GameQuest!  🎲
