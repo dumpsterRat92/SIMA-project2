@@ -1,5 +1,5 @@
 // import models
-const Game = require('./Game');
+const Game = require('./game');
 const User = require('./user');
 const Tag = require('./Tag');
 const Gametag = require('./Gametag');
@@ -31,8 +31,8 @@ Tag.belongsToMany(Game, {
 });
 
 module.exports = {
-  Product,
-  Category,
+  Game,
+  User,
   Tag,
-  ProductTag,
-};
+  Gametag
+}
