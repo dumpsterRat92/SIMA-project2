@@ -1,4 +1,5 @@
 // import models
+const Gametype = require('./Gametype')
 const Game = require('./game');
 const User = require('./user');
 const Tag = require('./Tag');
@@ -9,6 +10,11 @@ Game.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE',
 });
+
+Game.belongsTo(Gametype, {
+  foreignKey: 'gametype_id',
+  onDelete: 'CASCADE',
+})
 
 // User have many Games
 User.hasMany(Game, {
