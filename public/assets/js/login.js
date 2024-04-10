@@ -17,9 +17,9 @@ const loginFormHandler = async (event) => {
         alert('Failed to log in.');
       }
     }
-  };
+};
   
-  const signupFormHandler = async (event) => {
+const signupFormHandler = async (event) => {
     event.preventDefault();
   
     const email = document.querySelector('#email-signup').value.trim();

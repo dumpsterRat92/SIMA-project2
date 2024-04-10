@@ -15,7 +15,7 @@ router.post('/new', async (req, res) => {
             minplayers: req.body.minplayers,
             maxplayers: req.body.maxplayers,
             gametype_id: GametypeID.id,
-            user_id: req.body.id
+            user_id: req.user.id
         })
         res.status(200).json({newGame, message: 'Game created successfully'})
     } catch (err) {
