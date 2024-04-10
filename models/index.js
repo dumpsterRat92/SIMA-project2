@@ -19,6 +19,7 @@ Game.belongsTo(Gametype, {
 // User have many Games
 User.hasMany(Game, {
   foreignKey: 'user_id',
+  onDelete: 'CASCADE',
 });
 // Game belongToMany Tags (through Gametag)
 Game.belongsToMany(Tag, {
@@ -40,5 +41,6 @@ module.exports = {
   Game,
   User,
   Tag,
-  Gametag
+  Gametag,
+  Gametype
 }
