@@ -3,7 +3,6 @@ const { Game, Gametype, Tag, Gametag } = require('../models');
 
 router.post('/new', async (req, res) => {
     try{
-        console.log(req.session.userId)
         const GametypeID = await Gametype.findOne({
             where: {
                 name: req.body.gametype

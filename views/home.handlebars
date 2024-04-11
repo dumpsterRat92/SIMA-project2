@@ -4,6 +4,9 @@
 <div class="add-game-container">
 <button id="addGameBtn">Add New Game</button>
 </div>
+<div id="gamelist">
+    {{> game games}}
+</div>
 {{!-- submit form modal with inputs for name, minplayers,- maxplayers, type 
 (gametype_id), dropdown enter premade tags  --}}
 <div id="addGameModal" class="modal">

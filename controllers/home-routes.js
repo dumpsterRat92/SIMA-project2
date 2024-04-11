@@ -7,20 +7,26 @@ router.get('/', withAuth, async (req, res) => {
     try {
         
         const tag = await Tag.findAll();
-        const game = await Game.findAll();
+        const game2 = await Game.findAll();
         const gametype = await Gametype.findAll();
 
         
-        console.log(game)
+        console.log(game2)
         
 
-        const games = game.map((game) => {
-            const tag = getGametag(game);
-            const type = getGametype(game);
-            game.get({ plain: true });
-            game.tag_name = tag;
-            game.gametype_name = type;
+        const games = game2.map((game) => {
+            return game.get({ plain: true });
         });
+        console.log(games);
+        for (let game of games) {
+            console.log('houston come in')
+            const tag2 = await getGametag(game);
+            const type = await getGametype(game);
+            game.tag = await tag2.name;
+            game.gametype = await type.name;
+    
+        }
+        console.log( await games);
         const gametypes = gametype.map((gametype) => 
         gametype.get({ plain: true }
         ));
@@ -28,7 +34,7 @@ router.get('/', withAuth, async (req, res) => {
         tag.get({ plain: true }
         ));
 
-        console.log(game);
+        console.log(games);
 
         console.log('gameroutes leg')
         res.render('home', {
@@ -54,6 +60,7 @@ router.get('/login', (req, res) => {
 
 
 const getGametag = async (games) => {
+    console.log(games);
     const gametag = await Gametag.findOne({
         where: {
             game_id: games.id
@@ -70,6 +77,7 @@ const getGametag = async (games) => {
 } 
 
 const getGametype = async (games) => {
+    console.log(games);
     const type = await Gametype.findOne({
         where: {
             id: games.gametype_id
@@ -78,4 +86,5 @@ const getGametype = async (games) => {
     const types = type.get({ plain: true });
     return types
 }
+
 module.exports = router;
