@@ -1,23 +1,23 @@
 const { Tag } =require('../models')
 
 const tagData = [{
-    tag_name: "Strategy",
+    name: "Strategy",
 },
 {
-    tag_name: "Mystery",
+    name: "Mystery",
 },
 {
-    tag_name: "Guessing",
+    name: "Guessing",
 },
 {
-    tag_name: "Social",
+    name: "Social",
 },
 {
-    tag_name: "Drinking",
+    name: "Drinking",
 },
 {
-    tag_name: "Luck",
+    name: "Luck",
 },
 ]
-const seedTags = () => Tag.bulkCreate(seedTags)
+const seedTags = () => Tag.bulkCreate(tagData);
 module.exports = seedTags;
