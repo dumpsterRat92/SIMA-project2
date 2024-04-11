@@ -45,6 +45,7 @@ if (addGameForm) {
 //Shows the modal when the 'Add new game' button is clicked
 var addGameBtn = document.getElementById( 'addGameBtn' );
 addGameBtn.addEventListener( 'click', function() {
+    event.preventDefault();
     checkSessionStatus();
     addGameModal.style.display = "block";
 }); 
@@ -52,6 +53,7 @@ addGameBtn.addEventListener( 'click', function() {
 const dltBtn = document.querySelector('#dltbtn');
 if (dltBtn){
     dltBtn.addEventListener('click', async function(event){
+        console.log('click')
       event.preventDefault();
       checkSessionStatus();
         try {
@@ -83,7 +85,7 @@ function checkSessionStatus() {
         .then(response => response.json())
         .then(data => {
             if (data.status === 'inactive') {
-                window.location.reload(true); // Force a reload from the server
+                window.location.reload(true); 
             } else {
                 console.log('Session active');
             }
@@ -91,36 +93,17 @@ function checkSessionStatus() {
         .catch(error => console.error('Error checking session status:', error));
 }
 
-// Check session status every 5 minutes
+
 setInterval(checkSessionStatus, 1 * 60 * 1000)
 
-function checkSessionStatus() {
-    fetch('/session-status')
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'inactive') {
-                window.location.reload(true); // Force a reload from the server
-            } else {
-                console.log('Session active');
-            }
-        })
-        .catch(error => console.error('Error checking session status:', error));
-}
-
-// Check session status every 5 minutes
-setInterval(checkSessionStatus, 1 * 60 * 1000)
-
-  var closeModalBtn = document.getElementById('closeModal');
-
-
-  closeModalBtn.addEventListener('click', function() {
+// CLOSE BUTTON
+var closeModalBtn = document.getElementById('closeModal');
+closeModalBtn.addEventListener('click', function() {
     event.preventDefault();
-      addGameModal.style.display = "none";
-  });
+    addGameModal.style.display = "none";
+});
 
-
-var modalOverlay = document.getElementById('modalOverlay');
-
+// CHANGE BACKGROUND
 const path = window.location.pathname;
 let className = 'defaultbg';
 
