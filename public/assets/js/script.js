@@ -51,13 +51,18 @@ addGameBtn.addEventListener( 'click', function() {
 const dltBtn = document.querySelector('#dltbtn');
 if (dltBtn){
     dltBtn.addEventListener('click', async function(event){
+      event.preventDefault();
         try {
             const parentEl = event.target.parentNode;
             const targetId = parentEl.id;
             const response = await fetch(`/user/game/${targetId}`, {
                 method: 'DELETE',
                 headers: { 'Content-Type': 'application/json' },
-            })
+            });
+
+            setTimeout(() => {
+              location.reload();
+            }, 250)
             if (response.ok) {
                 console.log('deleted game successfully');
             } else {
