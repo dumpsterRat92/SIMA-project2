@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 const addNewGame = async (event) => {
     event.preventDefault();
-    
+    checkSessionStatus();
     const tagsInput = document.querySelector('#tags');
     const nameInput = document.querySelector('#name');
     const gametypeInput = document.querySelector('#type');
@@ -45,6 +45,7 @@ if (addGameForm) {
 //Shows the modal when the 'Add new game' button is clicked
 var addGameBtn = document.getElementById( 'addGameBtn' );
 addGameBtn.addEventListener( 'click', function() {
+    checkSessionStatus();
     addGameModal.style.display = "block";
 }); 
 
@@ -52,6 +53,7 @@ const dltBtn = document.querySelector('#dltbtn');
 if (dltBtn){
     dltBtn.addEventListener('click', async function(event){
       event.preventDefault();
+      checkSessionStatus();
         try {
             const parentEl = event.target.parentNode;
             const targetId = parentEl.id;
@@ -75,6 +77,22 @@ if (dltBtn){
 } else {
     console.log('no maidens');
 }
+
+function checkSessionStatus() {
+    fetch('/session-status')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'inactive') {
+                window.location.reload(true); // Force a reload from the server
+            } else {
+                console.log('Session active');
+            }
+        })
+        .catch(error => console.error('Error checking session status:', error));
+}
+
+// Check session status every 5 minutes
+setInterval(checkSessionStatus, 1 * 60 * 1000)
 
 
 });
