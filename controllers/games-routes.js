@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const { Game } = require('../models');
-const Gametype = require('../models/Gametype');
-
+const { Game, Gametype, Tag, Gametag } = require('../models');
 
 router.post('/new', async (req, res) => {
     try{
@@ -11,6 +9,11 @@ router.post('/new', async (req, res) => {
                 name: req.body.gametype
             }
         })
+        const newTags = await Tag.findOne ({
+            where: {
+                name: req.body.tags
+            }
+        })
         const newGame = await Game.create ({
             name: req.body.name,
             minplayers: req.body.minplayers,
@@ -18,7 +21,11 @@ router.post('/new', async (req, res) => {
             gametype_id: GametypeID.id,
             user_id: req.session.userId
         })
-        res.status(200).json({newGame, message: 'Game created successfully'})
+        const newGameTag = await Gametag.create ({
+            game_id: newGame.id,
+            tag_id: newTags.id
+        })
+        res.status(200).json({newGame, newTags, newGameTag, message: 'Game created successfully'})
     } catch (err) {
         console.error(err);
         res.status(500).json(err);

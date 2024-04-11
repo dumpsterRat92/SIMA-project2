@@ -2,31 +2,49 @@ document.addEventListener('DOMContentLoaded', function() {
     const addNewGame = async (event) => {
       event.preventDefault();
   
+      const tagsInput = document.querySelector('#tags');
       const nameInput = document.querySelector('#name');
       const gametypeInput = document.querySelector('#type');
       const minplayersInput = document.querySelector('#minplayers');
       const maxplayersInput = document.querySelector('#maxplayers');
   
+      const tags = tagsInput ? tagsInput.value.trim() : 'tagless'
       const name = nameInput ? nameInput.value.trim() : 'noname';
       const gametype = gametypeInput ? gametypeInput.value.trim() : 'Card';
       const minplayers = minplayersInput ? minplayersInput.value.trim() : '0';
       const maxplayers = maxplayersInput ? maxplayersInput.value.trim() : '0';
   
-      if (name && gametype && minplayers && maxplayers) {
+      
+      if (name && gametype && minplayers && maxplayers && tags) {
         const response = await fetch('/user/game/new', {
           method: 'POST',
-          body: JSON.stringify({ name, gametype, minplayers, maxplayers }),
+          body: JSON.stringify({ name, gametype, minplayers, maxplayers, tags }),
           headers: { 'Content-Type': 'application/json' },
         });
   
         if (response.ok) {
-          console.log('added game successfully', name, gametype, maxplayers, minplayers);
+          console.log('added game successfully', name, gametype, minplayers, maxplayers, tags);
         } else {
           alert('Failed to add game');
         }
       }
     };
-  
+    
+    // const loadGames = async ()=>{
+    //     try {
+    //         const games = await fetchGames();
+    //         console.log(games);
+    //         return games;
+    //     } catch (err) {
+    //         console.error('Failed to load bruh', error);
+    //         throw error
+    //     }
+    // }
+
+    // const fetchGames = async () => {
+    //     const response = await fetch('/user/game')
+    // }
+
     const addGameForm = document.querySelector('#addGameForm');
     if (addGameForm) {
       addGameForm.addEventListener('submit', addNewGame);
@@ -34,3 +52,5 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('no addgameform');
     }
   });
+
+  
