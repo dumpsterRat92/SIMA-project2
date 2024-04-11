@@ -1,15 +1,20 @@
 /* Base styles */
 body {
-    font-family: ;
-    background: linear-gradient(to top, chartreuse 30%, white);
-    color: #333;
+    background-image: url(../images/bg@2x-94387ea1024e309daad19a5561c912d0.jpg);
+    background-size: 100vw;
+    color: #a9a9ad;
     line-height: 1.6;
     margin: 0;
     padding: 20px;
 }
 
 h1 {
-    color: #333;
+    color: #8f8e99;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #8f8e99;
     text-align: center;
 }
 
