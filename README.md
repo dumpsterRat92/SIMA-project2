@@ -1,7 +1,7 @@
-# GameQuest
+#  Welcome to SIMA:GameQuest!
 
 ## Overview
-Welcome to GameQuest! This website is designed to help you organize and enjoy game nights with your friends and family. Whether you're a board game enthusiast or just looking for some fun activities to do together, this platform has got you covered. With features like game categorization, score tracking, and easy-to-use spreadsheets, planning your game night has never been easier.
+Proudly presenting SIMA: GameQuest! This website is designed to help you organize and enjoy game nights with your friends and family. Whether you're a board game enthusiast or just looking for some fun activities to do together, this platform has got you covered. With features like game categorization, score tracking, and easy-to-use spreadsheets, planning your game night has never been easier.
 
 ## Getting Started
 1. **Clone the Repository**: 
@@ -14,8 +14,13 @@ npm install
 node server.js
 6. **Explore the Website**: Open your web browser and navigate to 'http://localhost:3001' to start exploring the GameQuest website~!
 
-
 Enjoy your game night with GameQuest!  🎲
+
+## Screenshot 
+![Alt text](public/assets/images/screencapture-localhost-3001-login-2024-04-11-15_46_14.png?raw=true "Screenshot")
+
+## Link to Deployed Site
+
 
 
 
