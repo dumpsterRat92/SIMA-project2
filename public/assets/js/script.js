@@ -77,6 +77,26 @@ if (dltBtn){
 }
 
 
+
+  var closeModalBtn = document.getElementById('closeModal');
+
+
+
+  // Functionality to hide the modal on button click
+  closeModalBtn.addEventListener('click', function() {
+    event.preventDefault();
+      addGameModal.style.display = "none";
+  });
+
+  // Existing delete functionality
+  // Your existing code for delete operation...
+});
+  // Assuming the overlay has an ID of 'modalOverlay'
+var modalOverlay = document.getElementById('modalOverlay');
+
+modalOverlay.addEventListener('click', function(event) {
+    if (event.target == modalOverlay) { // Checks if the overlay was the target
+        addGameModal.style.display = 'none';
+    }
 });
 
-  
