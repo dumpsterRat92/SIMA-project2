@@ -1,7 +1,8 @@
 const router = require('express').Router();
 const { Game, Gametype, Tag, Gametag } = require('../models');
+const withAuth = require('../utils/auth');
 
-router.post('/new', async (req, res) => {
+router.post('/new', withAuth, async (req, res) => {
     try{
         const GametypeID = await Gametype.findOne({
             where: {
@@ -31,7 +32,7 @@ router.post('/new', async (req, res) => {
     }
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
     try{
         const game = await Game.findByPk(req.params.id);
 

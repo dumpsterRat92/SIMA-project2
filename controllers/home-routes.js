@@ -10,39 +10,44 @@ router.get('/', withAuth, async (req, res) => {
         const game2 = await Game.findAll();
         const gametype = await Gametype.findAll();
 
-        
-        console.log(game2)
-        
+        var games;
+        console.log(game2);
+        if (game2) {
 
-        const games = game2.map((game) => {
-            return game.get({ plain: true });
-        });
-        console.log(games);
-        for (let game of games) {
-            console.log('houston come in')
-            const tag2 = await getGametag(game);
-            const type = await getGametype(game);
-            game.tag = await tag2.name;
-            game.gametype = await type.name;
+            games = game2.map((game) => {
+                return game.get({ plain: true });
+            });
     
+            for (let game of games) {
+                console.log('houston come in')
+                const tag2 = await getGametag(game);
+                const type = await getGametype(game);
+                game.tag = await tag2.name;
+                game.gametype = await type.name;
+            }
         }
-        console.log( await games);
+
+
         const gametypes = gametype.map((gametype) => 
         gametype.get({ plain: true }
         ));
         const tags = tag.map((tag) => 
         tag.get({ plain: true }
         ));
-
-        console.log(games);
-
-        console.log('gameroutes leg')
-        res.render('home', {
-            gametypes,
-            tags,
-            games,
-            loggedIn: req.session.loggedIn,
-        });
+        if(games) {
+            res.render('home', {
+                gametypes,
+                tags,
+                games,
+                loggedIn: req.session.loggedIn,
+            });
+        } else {
+            res.render('home', {
+                gametypes,
+                tags,
+                loggedIn: req.session.loggedIn,
+            });
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);

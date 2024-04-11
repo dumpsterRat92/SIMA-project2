@@ -8,12 +8,12 @@ for game type
 for the tags one tag only --}}
 
 {{#each this}}
-<div class="game-card">
+<div id="{{id}}" class="game-card">
   <h3>{{name}}</h3>
   <p>{{minplayers}}-{{maxplayers}}</p>
   <p>{{gametype}}</p>
   <p>{{tag}}</p>
-  <a href="user/game/{{id}}">Delete Game</a>
+  <a id="dltbtn" href="">Delete Game</a>
 </div>
 {{/each}}
     
