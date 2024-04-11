@@ -10,18 +10,21 @@
 </head>
 
 <body>
-  <header>
-    <h2>Welcome to</h2> <h1>SIMA: GameQuest</h1>
-    <h3>Start Imagining More Adventures</h3>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
+  <div>
+    <header>
+      <h2>Welcome to</h2> 
+      <h1 id="sima">SIMA: GameQuest</h1>
+      <h3>Start Imagining More Adventures</h3>
+    </header>
+    <nav>
+      <a href="/">Home</a>
+      {{#if loggedIn}}
+      <button id="logout" class="btn-no-style">Logout</button>
+      {{else}}
+      <a href="/login">Login</a>
+      {{/if}}
+    </nav>
+  </div>
   <main>
     <aside>
       <h2>Game On!!</h2>
