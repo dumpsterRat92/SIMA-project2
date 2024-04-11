@@ -8,6 +8,20 @@ body {
     padding: 20px;
 }
 
+.login-box {
+    background-image: url('../images/bg-26e89fc86cc5343ce0263f25d15704c7.jpg'); 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+header, nav {
+    position: relative; /* Or 'absolute', depending on your layout */
+    z-index: 10; /* Higher than the z-index of .login-box */
+}
+
 h1 {
     color: #8f8e99;
     text-align: center;
@@ -24,6 +38,16 @@ h2, h3 {
     margin: 20px 0;
 }
 
+.modal-close-btn {
+    position: absolute;
+    top: 10px; /* Adjust as needed /
+    right: 10px; / Adjust as needed /
+    padding: 5px 10px;
+    background-color: #f44336; / Red color; change as desired /
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 /* Button Styles */
 button {
     background-color: #4CAF50;
