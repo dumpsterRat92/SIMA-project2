@@ -110,3 +110,15 @@ br {
     justify-content: space-around;
     flex-grow: 1;
 }
+
+/* Login Styles */
+.login-box {
+    display: flex;
+    flex-direction: row;
+}
+
+.login-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
