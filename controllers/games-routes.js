@@ -5,6 +5,7 @@ const Gametype = require('../models/Gametype');
 
 router.post('/new', async (req, res) => {
     try{
+        console.log(req.session.userId)
         const GametypeID = await Gametype.findOne({
             where: {
                 name: req.body.gametype
@@ -15,7 +16,7 @@ router.post('/new', async (req, res) => {
             minplayers: req.body.minplayers,
             maxplayers: req.body.maxplayers,
             gametype_id: GametypeID.id,
-            user_id: req.user.id
+            user_id: req.session.userId
         })
         res.status(200).json({newGame, message: 'Game created successfully'})
     } catch (err) {

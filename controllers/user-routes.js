@@ -10,6 +10,7 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
 
+        req.session.userid = UserData.id;
         req.session.save(() => {
             req.session.loggedIn = true;
             res.status(200).json(UserData);
@@ -40,6 +41,7 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'Incorrect email or password' });
             return;
         }
+        req.session.userId = userData.id;
         req.session.save(() => {
             req.session.loggedIn = true;
             
