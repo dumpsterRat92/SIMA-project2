@@ -94,7 +94,45 @@ function checkSessionStatus() {
 // Check session status every 5 minutes
 setInterval(checkSessionStatus, 1 * 60 * 1000)
 
+function checkSessionStatus() {
+    fetch('/session-status')
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'inactive') {
+                window.location.reload(true); // Force a reload from the server
+            } else {
+                console.log('Session active');
+            }
+        })
+        .catch(error => console.error('Error checking session status:', error));
+}
+
+// Check session status every 5 minutes
+setInterval(checkSessionStatus, 1 * 60 * 1000)
+
+  var closeModalBtn = document.getElementById('closeModal');
+
+
+  closeModalBtn.addEventListener('click', function() {
+    event.preventDefault();
+      addGameModal.style.display = "none";
+  });
+
+
+var modalOverlay = document.getElementById('modalOverlay');
+
+const path = window.location.pathname;
+let className = 'defaultbg';
+
+if (path === '/') {
+    className = 'homebg';
+} else if (path.includes('login')) {
+    className = 'loginbg';
+}
+
+document.body.classList.add(className);
 
 });
 
-  
+
+

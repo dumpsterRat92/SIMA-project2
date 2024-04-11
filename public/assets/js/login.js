@@ -48,3 +48,13 @@ const signupFormHandler = async (event) => {
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
   
+const path = window.location.pathname;
+let className = 'defaultbg';
+
+if (path === '/') {
+    className = 'homebg';
+} else if (path.includes('login')) {
+    className = 'loginbg';
+}
+
+document.body.classList.add(className);
