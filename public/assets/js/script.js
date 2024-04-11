@@ -51,6 +51,15 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log('no addgameform');
     }
+
+        //Shows the modal when the 'Add new game' button is clicked
+        var addGameBtn = document.getElementById( 'addGameBtn' );
+        var addGameModal = document.getElementById( 'addGameModal' );
+    
+        addGameBtn.addEventListener( 'click', function() {
+          addGameModal.style.display = "block";
+        });  
+        
   });
 
   
