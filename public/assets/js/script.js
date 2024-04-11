@@ -32,21 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     };
-    
-    // const loadGames = async ()=>{
-    //     try {
-    //         const games = await fetchGames();
-    //         console.log(games);
-    //         return games;
-    //     } catch (err) {
-    //         console.error('Failed to load bruh', error);
-    //         throw error
-    //     }
-    // }
-
-    // const fetchGames = async () => {
-    //     const response = await fetch('/user/game')
-    // }
 
     const addGameForm = document.querySelector('#addGameForm');
     if (addGameForm) {
