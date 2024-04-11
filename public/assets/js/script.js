@@ -7,6 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
       const gametypeInput = document.querySelector('#type');
       const minplayersInput = document.querySelector('#minplayers');
       const maxplayersInput = document.querySelector('#maxplayers');
+      var addGameBtn = document.getElementById( 'addGameBtn' );
+      var addGameModal = document.getElementById( 'addGameModal' );
   
       const tags = tagsInput ? tagsInput.value.trim() : 'tagless'
       const name = nameInput ? nameInput.value.trim() : 'noname';
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
         if (response.ok) {
           console.log('added game successfully', name, gametype, minplayers, maxplayers, tags);
+          addGameModal.style.display = 'none';
         } else {
           alert('Failed to add game');
         }
@@ -53,13 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
         //Shows the modal when the 'Add new game' button is clicked
-        var addGameBtn = document.getElementById( 'addGameBtn' );
-        var addGameModal = document.getElementById( 'addGameModal' );
-    
         addGameBtn.addEventListener( 'click', function() {
           addGameModal.style.display = "block";
         });  
-        
   });
 
   
