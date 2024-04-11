@@ -1,5 +1,5 @@
 body {
- background-color: chartreuse;
+ background: linear-gradient(to top, chartreuse 30%, white);
 }
 
 
