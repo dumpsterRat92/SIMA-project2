@@ -21,6 +21,4 @@ Enjoy your game night with GameQuest!  🎲
 
 ## Link to Deployed Site
 
-
-
-
+[Deployed Site](https://sima-gamequest-4ac32409406b.herokuapp.com/login)

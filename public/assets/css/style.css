@@ -6,18 +6,20 @@ body {
     margin: 0;
     padding: 20px;
 }
+
 .homebg {
     background-image: url(../images/bg@2x-94387ea1024e309daad19a5561c912d0.jpg);
     background-repeat: no-repeat;
 }
+
 .loginbg {
     background-image: url('../images/bg-26e89fc86cc5343ce0263f25d15704c7.jpg');
     background-repeat: no-repeat;
 }
+
 .defaultbg {
     background-color: #FFFFFF;
 }
-
 
 header {
     margin-top: 0;
@@ -30,10 +32,12 @@ header {
     margin-bottom: 10px;
     justify-content: space-around;
 }
+
 nav {
 display: flex;
 justify-content: flex-end;
 }
+
 nav button, nav a {
     margin: 5px;
 }
@@ -123,6 +127,7 @@ form {
     display: flex;
     flex-direction: column;
 }
+
 #players {
     display: flex;
     flex-direction: row;
@@ -187,12 +192,14 @@ br {
     flex-direction: row;
     justify-content: space-around;
 }
+
 .login-form, .signup-form{
     color: #646464;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .login-card {
     background: #34343467; /*Semi-transparent black background*/
     color: rgba(219, 219, 219, 0.865);
