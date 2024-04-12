@@ -62,6 +62,10 @@ router.get('/session-status', (req, res) => {
     }
 });
 
+router.get('/gamepad', withAuth, async (req, res) => {
+    res.render('gamepad')
+})
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
       res.redirect('/');

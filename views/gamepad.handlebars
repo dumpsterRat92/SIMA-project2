@@ -1,0 +1,11 @@
+
+    <div class="gamepad">
+        {{#each columns}}
+        <div class="column">
+            <input type="text" placeholder="Player Name" value="{{@key}}" class="player-name">
+            {{#each this}}
+            <div class="box" contenteditable="true">{{this}}</div>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
