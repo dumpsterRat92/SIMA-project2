@@ -2,6 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
 const addNewGame = async (event) => {
     event.preventDefault();
     checkSessionStatus();
+    const hidethistoo = document.querySelector('#hidethistoo');
+    hidethistoo.style.display = "none";
+    const hidethis = document.querySelector('#hidethis');
+    hidethis.style.display = "none";
     const tagsInput = document.querySelector('#tags');
     const nameInput = document.querySelector('#name');
     const gametypeInput = document.querySelector('#type');
@@ -47,6 +51,8 @@ var addGameBtn = document.getElementById( 'addGameBtn' );
 addGameBtn.addEventListener( 'click', function() {
     event.preventDefault();
     checkSessionStatus();
+    const hidethis = document.querySelector('#hidethis');
+    hidethis.style.display = "none";
     addGameModal.style.display = "block";
 }); 
 
@@ -101,6 +107,11 @@ var closeModalBtn = document.getElementById('closeModal');
 closeModalBtn.addEventListener('click', function() {
     event.preventDefault();
     addGameModal.style.display = "none";
+    const hidethis = document.querySelector('#hidethis');
+    hidethis.style.display = "block";
+    const hidethistoo = document.querySelector('#hidethistoo');
+    hidethistoo.style.display = "block";
+
 });
 
 // CHANGE BACKGROUND

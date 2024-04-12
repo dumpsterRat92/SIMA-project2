@@ -12,11 +12,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
+    name: 'billyBob',
     secret: 'Super secret',
     cookie: { maxAge: 60000 },
-    resave: true,
+    resave: false,
     saveUninitialized: false,
-    rolling: true,
+    rolling: false,
     store: new SequelizeStore({
       db: sequelize,
     }),

@@ -12,6 +12,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        document.cookie = "billyBob";
         document.location.replace('/');
       } else {
         alert('Failed to log in.');
@@ -33,6 +34,7 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
+        document.cookie = "billyBob";
         document.location.replace('/');
       } else {
         alert('Failed to sign up.');
@@ -58,3 +60,53 @@ if (path === '/') {
 }
 
 document.body.classList.add(className);
+
+
+function checkSessionCookie() {
+  const cookies = document.cookie.split(';');
+
+  for (var i =0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+
+      if (cookie.match('billyBob')){
+          return true
+      }
+  }
+
+  return false
+}
+
+if (checkSessionCookie()){
+  SignUp();
+} else {
+  Login();
+}
+
+document
+    .querySelector('#loginbtn')
+    .addEventListener('click', SignUp);
+document
+    .querySelector('#signupbtn')
+    .addEventListener('click', Login);
+
+function SignUp () {
+  const hideLogin = document.querySelector('#login');
+  hideLogin.style.display = "block";
+  const hideSignUp = document.querySelector('#signup');
+  hideSignUp.style.display = "none";
+  const showSignupBtn = document.querySelector('#signupbtn');
+  showSignupBtn.style.display = "block";
+  const showLoginBtn = document.querySelector('#loginbtn');
+  showLoginBtn.style.display = "none";
+}
+
+function Login(){
+  const hideSignUp = document.querySelector('#signup');
+  hideSignUp.style.display = "block";
+  const hideLogin = document.querySelector('#login');
+  hideLogin.style.display = "none";
+  const showLoginBtn = document.querySelector('#loginbtn');
+  showLoginBtn.style.display = "block";
+  const showSignupBtn = document.querySelector('#signupbtn');
+  showSignupBtn.style.display = "none";
+}

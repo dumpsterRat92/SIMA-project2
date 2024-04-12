@@ -1,6 +1,6 @@
 /* Base styles */
 body {
-    background-size: 100vw;
+    height: 100%;
     color: #a9a9ad;
     line-height: 1.6;
     margin: 0;
@@ -8,9 +8,11 @@ body {
 }
 .homebg {
     background-image: url(../images/bg@2x-94387ea1024e309daad19a5561c912d0.jpg);
+    background-repeat: no-repeat;
 }
 .loginbg {
     background-image: url('../images/bg-26e89fc86cc5343ce0263f25d15704c7.jpg');
+    background-repeat: no-repeat;
 }
 .defaultbg {
     background-color: #FFFFFF;
@@ -38,6 +40,14 @@ nav button, nav a {
 h1 {
     color: #8f8e99;
     text-align: center;
+}
+
+#sima {
+    margin-left: 100px;
+}
+
+#welcome{
+    margin-left: 50px;
 }
 
 h2, h3 {
@@ -81,12 +91,13 @@ button:hover {
 }
 
 .modal-content {
-    background-color: #fefefe94;
+    background: #34343471; 
+    color: #646464;
     margin: 5% auto;
-    margin-top: 200px;
+    margin-top: 180px;
     padding: 20px;
     border: 1px solid #888;
-    border-radius: 4px;
+    border-radius: 30px;
     width: 70%; /* Could be more or less, depending on screen size */
 }
 
@@ -107,9 +118,14 @@ button:hover {
 
 /* Form Styles */
 form {
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 2fr;
+    color: rgba(219, 219, 219, 0.865);
+    display: flex;
+    flex-direction: column;
+}
+#players {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
 }
 
 label {
@@ -117,8 +133,9 @@ label {
     display: inline-block;
 }
 
-input[type="text"], input[type="number"], select {
-    width: 100%;
+input[type="text"], input[type="password"], input[type="number"], select {
+    width: 60%;
+    margin: 0 20px 0 20px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -132,7 +149,6 @@ input[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    grid-column: 2 / 3;
     margin-left: auto;
 }
 
@@ -153,23 +169,32 @@ br {
 } 
 
 #gamelist .game-card{
+    background: #34343471; 
+    color: rgba(219, 219, 219, 0.865);
     display: flex;
     width: 100%;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     flex-grow: 1;
+    border-radius: 30px;
 }
 
 /* Login Styles */
 .login-box {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
-
+.login-form, .signup-form{
+    color: #646464;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .login-card {
-    background: #00000067; /*Semi-transparent black background*/
-    color: white;
+    background: #34343467; /*Semi-transparent black background*/
+    color: rgba(219, 219, 219, 0.865);
     padding: 2em;
     border-radius: 30px; /* Rounded Corners */
     margin: 5px;

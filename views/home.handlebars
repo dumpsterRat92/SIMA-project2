@@ -1,11 +1,13 @@
 {{!-- where user lands after login --}}
+<div id="hidethis">
 <h1>Welcome to your SIMA: Game Collection</h1>
 {{!-- add a new game button --}}
-<div class="add-game-container">
-<button id="addGameBtn">Add New Game</button>
-</div>
-<div id="gamelist">
-    {{> game games}}
+    <div class="add-game-container">
+        <button id="addGameBtn">Add New Game</button>
+    </div>
+    <div id="gamelist">
+        {{> game games}}
+    </div>
 </div>
 {{!-- submit form modal with inputs for name, minplayers,- maxplayers, type 
 (gametype_id), dropdown enter premade tags  --}}
@@ -20,11 +22,13 @@
 
             {{!-- <label for="players">Number of Players:</label> --}}
             {{!-- <input type="text" id="players" name="players" placehloder="Min - Max" required><br> --}}
+            <div id="players">
             <label for="minplayers">Min players:</label>
-            <input type="number" id="minplayers" name="minplayers" required><br>
+            <input type="number" id="minplayers" name="minplayers" required>
 
-            <label for="maxplayers">Maximum Players:</label>
-            <input type="number" id="maxplayers" name="maxplayers" required><br> 
+            <label for="maxplayers">Max Players:</label>
+            <input type="number" id="maxplayers" name="maxplayers" required> 
+            </div>
             
             <label for="type">Type:</label>
             <select id="type" name="type" required>
