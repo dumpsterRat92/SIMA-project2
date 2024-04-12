@@ -18,6 +18,7 @@ body {
     background-color: #FFFFFF;
 }
 
+
 header {
     margin-top: 0;
     background: linear-gradient(45deg, #5959d5b5, #3c329a96);
@@ -38,7 +39,7 @@ nav button, nav a {
 }
 
 h1 {
-    color: #8f8e99;
+    color: #bebebe;
     text-align: center;
 }
 
@@ -51,7 +52,7 @@ h1 {
 }
 
 h2, h3 {
-    color: #8f8e99;
+    color: #d4d3e4;
     text-align: center;
 }
 
@@ -217,9 +218,11 @@ br {
 }
 
 .box {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border: 1px solid black;
-    margin-bottom: 5px;
+    display: inline-block;
+    margin: 5px;
     text-align: center;
-}
+    line-height: 50px;
+  }
