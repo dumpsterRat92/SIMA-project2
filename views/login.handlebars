@@ -1,39 +1,52 @@
+<!-- Container for login and signup cards -->
 <div class="login-box">
-  <div id="login" class="login-card">
-    <h2 class="page-title">Login</h2>
-    <form class="form login-form">
-      <div class="form-group">
-        <label for="email-login">Email:</label>
-        <input class="form-input" type="text" id="email-login" />
-      </div>
-      <div class="form-group">
-        <label for="password-login">Password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div id="signup" class="login-card">
-    <h2 class="page-title">Sign up</h2>
-    <form class="form signup-form">
-      <div class="form-group">
-        <label  id="email" for="email-signup">Email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">Password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
+    <!-- Login card with form for entering login credentials -->
+    <div id="login" class="login-card">
+        <h2 class="page-title">Login</h2> <!-- Title for the login section -->
+        <form class="form login-form">
+            <!-- Form group for email input -->
+            <div class="form-group">
+                <label for="email-login">Email:</label> <!-- Label for email input -->
+                <input class="form-input" type="text" id="email-login" /> <!-- Text input for email -->
+            </div>
+            <!-- Form group for password input -->
+            <div class="form-group">
+                <label for="password-login">Password:</label> <!-- Label for password input -->
+                <input class="form-input" type="password" id="password-login" /> <!-- Password input for password -->
+            </div>
+            <!-- Form group for login button -->
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">login</button> <!-- Submit button for the form -->
+            </div>
+        </form>
+    </div>
+    <!-- Signup card with form for registering new account -->
+    <div id="signup" class="login-card">
+        <h2 class="page-title">Sign up</h2> <!-- Title for the signup section -->
+        <form class="form signup-form">
+            <!-- Form group for email input -->
+            <div class="form-group">
+                <label id="email" for="email-signup">Email:</label> <!-- Label for email input -->
+                <input class="form-input" type="text" id="email-signup" /> <!-- Text input for email -->
+            </div>
+            <!-- Form group for password input -->
+            <div class="form-group">
+                <label for="password-signup">Password:</label> <!-- Label for password input -->
+                <input class="form-input" type="password" id="password-signup" /> <!-- Password input for password -->
+            </div>
+            <!-- Form group for signup button -->
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">signup</button> <!-- Submit button for the form -->
+            </div>
+        </form>
+    </div>
 </div>
+<!-- Visual element to separate or link the two forms conceptually -->
 <p id="or">OR</p>
-<button id="loginbtn">Login</button>
-<button id="signupbtn">Sign up</button>
+<!-- Buttons for toggling between login and signup forms -->
+<button id="loginbtn">Login</button> <!-- Button to show the login form -->
+<button id="signupbtn">Sign up</button> <!-- Button to show the signup form -->
+<!-- Commented out paragraph, possibly left from debugging or note -->
 {{!-- <p>ps. vini is gay</p> --}}
+<!-- External JavaScript file linked to handle login and signup interactions -->
 <script src="./assets/js/login.js"></script>

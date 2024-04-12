@@ -1,131 +1,114 @@
+// Listen for the DOM content to be fully loaded before running the script
 document.addEventListener('DOMContentLoaded', function() {
-const addNewGame = async (event) => {
-    event.preventDefault();
-    checkSessionStatus();
-    const hidethistoo = document.querySelector('#hidethistoo');
-    hidethistoo.style.display = "none";
-    const hidethis = document.querySelector('#hidethis');
-    hidethis.style.display = "none";
-    const tagsInput = document.querySelector('#tags');
-    const nameInput = document.querySelector('#name');
-    const gametypeInput = document.querySelector('#type');
-    const minplayersInput = document.querySelector('#minplayers');
-    const maxplayersInput = document.querySelector('#maxplayers');
-    var addGameModal = document.getElementById( 'addGameModal' );
-    
-    const tags = tagsInput ? tagsInput.value.trim() : 'tagless'
-    const name = nameInput ? nameInput.value.trim() : 'noname';
-    const gametype = gametypeInput ? gametypeInput.value.trim() : 'Card';
-    const minplayers = minplayersInput ? minplayersInput.value.trim() : '0';
-    const maxplayers = maxplayersInput ? maxplayersInput.value.trim() : '0';
-    
-    
-    if (name && gametype && minplayers && maxplayers && tags) {
-        const response = await fetch('/user/game/new', {
-            method: 'POST',
-            body: JSON.stringify({ name, gametype, minplayers, maxplayers, tags }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-        
-        if (response.ok) {
-            console.log('added game successfully', name, gametype, minplayers, maxplayers, tags);
-            addGameModal.style.display = 'none';
-            setTimeout(() => {
-                location.reload();
-            }, 100);
-        } else {
-            console.log('Failed to add game');
-        }
-    }
-};
+    // Async function to handle adding a new game via form submission
+    const addNewGame = async (event) => {
+        event.preventDefault(); // Prevents the form from submitting traditionally
+        checkSessionStatus(); // Checks if the user session is still active
+        const hidethistoo = document.querySelector('#hidethistoo');
+        hidethistoo.style.display = "none"; // Hides the element with id 'hidethistoo'
+        const hidethis = document.querySelector('#hidethis');
+        hidethis.style.display = "none"; // Hides the element with id 'hidethis'
 
-const addGameForm = document.querySelector('#addGameForm');
-if (addGameForm) {
-    addGameForm.addEventListener('submit', addNewGame);
-} else {
-    console.log('no addgameform');
-}
+        // Retrieves values from form inputs
+        const tagsInput = document.querySelector('#tags');
+        const nameInput = document.querySelector('#name');
+        const gametypeInput = document.querySelector('#type');
+        const minplayersInput = document.querySelector('#minplayers');
+        const maxplayersInput = document.querySelector('#maxplayers');
+        var addGameModal = document.getElementById('addGameModal');
 
-//Shows the modal when the 'Add new game' button is clicked
-var addGameBtn = document.getElementById( 'addGameBtn' );
-addGameBtn.addEventListener( 'click', function() {
-    event.preventDefault();
-    checkSessionStatus();
-    const hidethis = document.querySelector('#hidethis');
-    hidethis.style.display = "none";
-    addGameModal.style.display = "block";
-}); 
+        // Trims input values and sets defaults if empty
+        const tags = tagsInput ? tagsInput.value.trim() : 'tagless';
+        const name = nameInput ? nameInput.value.trim() : 'noname';
+        const gametype = gametypeInput ? gametypeInput.value.trim() : 'Card';
+        const minplayers = minplayersInput ? minplayersInput.value.trim() : '0';
+        const maxplayers = maxplayersInput ? maxplayersInput.value.trim() : '0';
 
-const dltBtn = document.querySelector('#dltbtn');
-if (dltBtn){
-    dltBtn.addEventListener('click', async function(event){
-        console.log('click')
-      event.preventDefault();
-      checkSessionStatus();
-        try {
-            const parentEl = event.target.parentNode;
-            const targetId = parentEl.id;
-            const response = await fetch(`/user/game/${targetId}`, {
-                method: 'DELETE',
+        // If all fields are filled, sends a POST request to add the game
+        if (name && gametype && minplayers && maxplayers && tags) {
+            const response = await fetch('/user/game/new', {
+                method: 'POST',
+                body: JSON.stringify({ name, gametype, minplayers, maxplayers, tags }),
                 headers: { 'Content-Type': 'application/json' },
             });
 
-            setTimeout(() => {
-              location.reload();
-            }, 250)
             if (response.ok) {
-                console.log('deleted game successfully');
+                console.log('added game successfully', name, gametype, minplayers, maxplayers, tags);
+                addGameModal.style.display = 'none'; // Hides the modal on success
+                setTimeout(() => {
+                    location.reload(); // Reloads the page after 100ms
+                }, 100);
             } else {
-                alert('Failed to delete game');
+                console.log('Failed to add game'); // Logs failure to console
             }
-        } catch (err) {
-            console.error(err)
         }
-    })
-} else {
-    console.log('no maidens');
-}
+    };
 
-function checkSessionStatus() {
-    fetch('/session-status')
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'inactive') {
-                window.location.reload(true); 
-            } else {
-                console.log('Session active');
+    // Adds event listener to the form submit action
+    const addGameForm = document.querySelector('#addGameForm');
+    if (addGameForm) {
+        addGameForm.addEventListener('submit', addNewGame);
+    } else {
+        console.log('no addgameform');
+    }
+
+    // Event listener for opening the add game modal
+    var addGameBtn = document.getElementById('addGameBtn');
+    addGameBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        checkSessionStatus(); // Checks session status when attempting to open the modal
+        const hidethis = document.querySelector('#hidethis');
+        hidethis.style.display = "none";
+        addGameModal.style.display = "block"; // Shows the add game modal
+    });
+
+    // Event listener for a delete button, to handle game deletion
+    const dltBtn = document.querySelector('#dltbtn');
+    if (dltBtn){
+        dltBtn.addEventListener('click', async function(event){
+            console.log('click')
+            event.preventDefault();
+            checkSessionStatus();
+            try {
+                const parentEl = event.target.parentNode;
+                const targetId = parentEl.id;
+                const response = await fetch(`/user/game/${targetId}`, {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                });
+
+                setTimeout(() => {
+                  location.reload();
+                }, 250)
+                if (response.ok) {
+                    console.log('deleted game successfully');
+                } else {
+                    alert('Failed to delete game');
+                }
+            } catch (err) {
+                console.error(err) // Logs error to console if exception occurs
             }
         })
-        .catch(error => console.error('Error checking session status:', error));
-}
+    } else {
+        console.log('no dltbtn');
+    }
 
+    // Function to check the status of the user session
+    function checkSessionStatus() {
+        fetch('/session-status')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'inactive') {
+                    window.location.reload(true); // Reloads the page if session is inactive
+                } else {
+                    console.log('Session active');
+                }
+            })
+            .catch(error => console.error('Error checking session status:', error));
+    }
 
-setInterval(checkSessionStatus, 1 * 60 * 1000)
+    // Continuously checks the session status every minute
+    setInterval(checkSessionStatus, 1 * 60 * 1000)
 
-// CLOSE BUTTON
-var closeModalBtn = document.getElementById('closeModal');
-closeModalBtn.addEventListener('click', function() {
-    event.preventDefault();
-    addGameModal.style.display = "none";
-    const hidethis = document.querySelector('#hidethis');
-    hidethis.style.display = "block";
-    const hidethistoo = document.querySelector('#hidethistoo');
-    hidethistoo.style.display = "block";
-
+    // Closes
 });
-
-// CHANGE BACKGROUND
-const path = window.location.pathname;
-let className = 'defaultbg';
-
-if (path === '/' || path.includes('gamepad')){
-    className = 'homebg';
-} else if (path.includes('login')) {
-    className = 'loginbg';
-}
-document.body.classList.add(className);
-
-});
-
-
-
