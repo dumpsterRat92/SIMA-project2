@@ -62,6 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
         addGameModal.style.display = "block"; // Shows the add game modal
     });
 
+    var closeModal = document.getElementById('closeModal');
+    closeModal.addEventListener('click', function(event) {
+        event.preventDefault();
+        const hidethis = document.querySelector('#hidethis');
+        hidethis.style.display = "block";
+        addGameModal.style.display = "none";
+    })
+
     // Event listener for a delete button, to handle game deletion
     const dltBtn = document.querySelector('#dltbtn');
     if (dltBtn){
@@ -107,6 +115,19 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => console.error('Error checking session status:', error));
     }
 
+    // Retrieve the current path from the window's location
+const path = window.location.pathname;
+let className = 'defaultbg'; // Default class name for the background
+
+// Determine the background class based on the current path
+if (path === '/' || path.includes('gamepad')) {
+    className = 'homebg'; // Set class for homepage or gamepad related pages
+} else if (path.includes('login')) {
+    className = 'loginbg'; // Set class for login pages
+}
+
+// Add the determined class to the body's class list
+document.body.classList.add(className);
     // Continuously checks the session status every minute
     setInterval(checkSessionStatus, 1 * 60 * 1000)
 
