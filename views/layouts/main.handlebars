@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- The HTML5 doctype declaration, defines this as an HTML5 document -->
+<html lang="en"> <!-- Sets the language of the document to English -->
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SIMA: GameQuest</title>
-  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-  
+  <meta charset="utf-8"> <!-- Defines the character encoding for the document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures proper scaling on different devices -->
+  <title>SIMA: GameQuest</title> <!-- Sets the title of the document shown in browser tab -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css"> <!-- Link to external CSS for styling -->
 </head>
 
 <body>
   <div>
     <header>
-      <h2 id="welcome">Welcome to</h2> 
-      <h1 id="sima">SIMA: GameQuest</h1>
-      <h3>Start Imagining More Adventures</h3>
+      <h2 id="welcome">Welcome to</h2> <!-- Secondary heading, part of the welcoming header -->
+      <h1 id="sima">SIMA: GameQuest</h1> <!-- Main heading, names the site or application -->
+      <h3>Start Imagining More Adventures</h3> <!-- Tertiary heading, a tagline -->
     </header>
     <nav>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
-      <button id="logout" class="btn-no-style">Logout</button>
+      <a href="/">Home</a> <!-- Navigation link to the homepage -->
+      <a href="/gamepad">Gamepad</a> <!-- Navigation link to the gamepad page -->
+      {{#if loggedIn}} <!-- Conditional rendering: checks if user is logged in -->
+      <button id="logout" class="btn-no-style">Logout</button> <!-- Displays if user is logged in -->
       {{else}}
-      <a href="/login">Login</a>
+      <a href="/login">Login</a> <!-- Displays if user is not logged in -->
       {{/if}}
     </nav>
   </div>
   <main>
-      <h2 id="hidethistoo">Game On!!</h2>
+      <h2 id="hidethistoo">Game On!!</h2> <!-- Heading within main content area -->
     <div class="gallery">
-      {{{body}}}
+      {{{body}}} <!-- Placeholder for dynamic content that will be injected server-side -->
     </div>
   </main>
   {{#if loggedIn}}
-  <script src="./assets/js/logout.js"></script>
+  <script src="./assets/js/logout.js"></script> <!-- Loads logout functionality script if user is logged in -->
   {{/if}}
 </body>
 

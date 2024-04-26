@@ -1,19 +1,10 @@
-{{!-- for each game = poop out games --}}
-{{!-- pull games where user id of game matches user id --}}
-{{!-- users have ids, games have user ids --}}
-{{!-- stuff to put the game into
-spot for name 
-for min-max players
-for game type
-for the tags one tag only --}}
-
+<!-- Iterate over the current context or array provided, rendering the content inside for each item -->
 {{#each this}}
 <div id="{{id}}" class="game-card">
-  <h3>{{name}}</h3>
-  <p>{{minplayers}}-{{maxplayers}}</p>
-  <p>{{gametype}}</p>
-  <p>{{tag}}</p>
-  <a id="dltbtn" href="">Delete Game</a>
+  <h3>{{name}}</h3> <!-- Display the game name dynamically from data -->
+  <p>{{minplayers}}-{{maxplayers}}</p> <!-- Display the range of minimum to maximum players -->
+  <p>{{gametype}}</p> <!-- Display the type of game -->
+  <p>{{tag}}</p> <!-- Display a tag associated with the game -->
+  <a id="dltbtn" href="">Delete Game</a> <!-- Link to delete the game, potentially requires dynamic href or JavaScript handling -->
 </div>
 {{/each}}
-    

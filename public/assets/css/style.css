@@ -1,11 +1,13 @@
-/* Base styles */
+/* Base styles for the entire body, setting up general aesthetics like color, line height, and spacing */
 body {
-    height: 100%;
-    color: #a9a9ad;
-    line-height: 1.6;
-    margin: 0;
-    padding: 20px;
+    height: 100%; /* Full height of the viewport */
+    color: #a9a9ad; /* Gray text color */
+    line-height: 1.6; /* Line spacing */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Space inside the body element */
 }
+
+/* Background styles for the homepage with a specific image */
 .homebg {
     background-image: url(../images/bg@2x-94387ea1024e309daad19a5561c912d0.jpg);
     background-position: center center;
@@ -14,6 +16,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Background styles for the login page with a specific image */
 .loginbg {
     background-image: url('../images/bg-26e89fc86cc5343ce0263f25d15704c7.jpg');
     background-position: center center;
@@ -22,96 +26,102 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Default background color for elements */
 .defaultbg {
-    background-color: #FFFFFF;
+    background-color: #FFFFFF; /* White background color */
 }
 
+/* Styles for the header, including gradient background and layout */
 header {
-    margin-top: 0;
-    background: linear-gradient(45deg, #5959d5b5, #3c329a96);
-    color: #fff;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10px;
-    justify-content: space-around;
+    margin-top: 0; /* No top margin */
+    background: linear-gradient(45deg, #5959d5b5, #3c329a96); /* Gradient background */
+    color: #fff; /* White text color */
+    width: 100%; /* Full width */
+    display: flex; /* Flexbox for layout */
+    flex-direction: row; /* Horizontal layout */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Bottom margin */
+    justify-content: space-around; /* Space distribution around items */
 }
+
+/* Navigation styles, aligned to the end of the flex container */
 nav {
-display: flex;
-justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end; /* Align items to the end (right) */
 }
+
+/* Styling for buttons and links within the navigation */
 nav button, nav a {
-    margin: 5px;
+    margin: 5px; /* Margin around buttons and links */
 }
 
+/* Styling for main headings, centralized and colored */
 h1 {
-    color: #8f8e99;
-    text-align: center;
+    color: #bebebe; /* Light grey color */
+    text-align: center; /* Center align text */
 }
 
-#sima {
-    margin-left: 100px;
+/* Custom margin settings for specific elements */
+#sima, #welcome {
+    margin-left: 100px; /* Left margin for #sima */
+    margin-left: 50px; /* Left margin for #welcome, overrides previous for this ID */
 }
 
-#welcome{
-    margin-left: 50px;
-}
-
+/* Styling for secondary and tertiary headings */
 h2, h3 {
-    color: #8f8e99;
-    text-align: center;
+    color: #d4d3e4; /* Light violet color */
+    text-align: center; /* Center align text */
 }
 
-/* Add Game Button Container */
+/* Container for adding a game button with centralized text alignment */
 .add-game-container {
     text-align: center;
-    margin: 20px 0;
+    margin: 20px 0; /* Vertical margins */
 }
 
-/* Button Styles */
+/* Button styles for interaction */
 button, a{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    text-decoration: none;
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding around text */
+    border: none; /* No borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    font-size: 16px; /* Text size */
+    text-decoration: none; /* No underline on links */
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Darker green on hover */
 }
 
-/* Modal Styles */
+/* Modal styles for popup elements */
 .modal {
     display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    padding-top: 60px;
+    position: fixed; /* Stay in place when scrolling */
+    z-index: 1; /* Stack order */
+    left: 0; /* Full width from left */
+    top: 0; /* Full height from top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Scrollable if content is large */
+    padding-top: 60px; /* Padding from the top */
 }
 
 .modal-content {
-    background: #34343471; 
-    color: #646464;
-    margin: 5% auto;
-    margin-top: 180px;
-    padding: 20px;
-    border: 1px solid #888;
-    border-radius: 30px;
-    width: 70%; /* Could be more or less, depending on screen size */
+    background: #34343471; /* Semi-transparent dark background */
+    color: #646464; /* Medium gray text color */
+    margin: 5% auto; /* Centered with 5% margin from top and bottom */
+    padding: 20px; /* Padding inside the content box */
+    border: 1px solid #888; /* Gray border */
+    border-radius: 30px; /* Rounded corners */
+    width: 70%; /* 70% of the parent's width */
 }
 
 .modal-close-btn {
-    top: 10px; 
-    right: 10px;
+    top: 10px; /* Positioned 10px from the top */
+    right: 10px; /* Positioned 10px from the right */
     padding: 5px 10px;
     background-color: #f44336;
     color: white;

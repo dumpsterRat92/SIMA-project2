@@ -1,0 +1,14 @@
+<!-- Loop to generate 10 div elements, each containing another set of 10 divs with class 'box' -->
+{{#times 10}}
+    <div>
+        <!-- Nested loop to generate 10 editable 'box' divs inside each of the above divs -->
+        {{#times 10}}
+            <div class="box" contenteditable>
+                <!-- Content of each 'box' div can be edited directly in the browser -->
+            </div>
+        {{/times}}
+    </div>
+{{/times}}
+
+<!-- Script tag to include external JavaScript file for gamepad functionality -->
+<script src="./assets/js/gamepad.js"></script> <!-- Loads JavaScript for handling gamepad interactions -->
