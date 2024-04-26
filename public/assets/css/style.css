@@ -8,11 +8,19 @@ body {
 }
 .homebg {
     background-image: url(../images/bg@2x-94387ea1024e309daad19a5561c912d0.jpg);
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #646464;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .loginbg {
     background-image: url('../images/bg-26e89fc86cc5343ce0263f25d15704c7.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: #646464;
     background-repeat: no-repeat;
+    background-size: cover;
 }
 .defaultbg {
     background-color: #FFFFFF;
