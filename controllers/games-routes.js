@@ -4,15 +4,11 @@ const withAuth = require('../utils/auth');
 
 router.post('/new', withAuth, async (req, res) => {
     try{
-        const GametypeID = await Gametype.findOne({
-            where: {
+        const GametypeID = await Gametype.create({
                 name: req.body.gametype
-            }
         })
-        const newTags = await Tag.findOne ({
-            where: {
+        const newTags = await Tag.create({
                 name: req.body.tags
-            }
         })
         const newGame = await Game.create ({
             name: req.body.name,

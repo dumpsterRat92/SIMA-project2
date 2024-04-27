@@ -3,8 +3,11 @@
 <div id="{{id}}" class="game-card">
   <h3>{{name}}</h3> <!-- Display the game name dynamically from data -->
   <p>{{minplayers}}-{{maxplayers}}</p> <!-- Display the range of minimum to maximum players -->
-  <p>{{gametype}}</p> <!-- Display the type of game -->
-  <p>{{tag}}</p> <!-- Display a tag associated with the game -->
+  <p>{{gametype.name}}</p> <!-- Display the type of game -->
+  <p>{{#each tags}}
+    {{name}}<br>
+    {{/each}}
+  </p> <!-- Display a tag associated with the game -->
   <a id="dltbtn" href="">Delete Game</a> <!-- Link to delete the game, potentially requires dynamic href or JavaScript handling -->
 </div>
 {{/each}}

@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store); // Function to connect Sequelize with session store
+// const seedAll = require('./seeds')
 
 const sequelize = require('./config/connection'); // Sequelize setup for database connection
 const routes = require('./controllers'); // Importing routes from the controllers directory
@@ -40,5 +41,5 @@ app.use(routes); // Use the imported routes as middleware
 
 // Sync all models with the database, then start the server
 sequelize.sync({ force: false}).then(() => {
-    app.listen(PORT, () => console.log('Now listening')); // Start the server on the specified port
+  app.listen(PORT, () => console.log('Now listening')); // Start the server on the specified port
 });

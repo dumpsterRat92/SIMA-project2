@@ -32,14 +32,23 @@
             
             <label for="type">Type:</label>
             <select id="type" name="type" required>
-                {{!--  populate options from  --}}
-                {{> typesandtags gametypes}}
+                {{!-- card, board, party, puzzle, video --}}
+                <option value="Card">Card</option>
+                <option value="Board">Board</option>
+                <option value="Party">Party</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Video">Video</option>
             </select><br>
 
             <label for="tags">Tags:</label>
             <select id="tags" name="tags" required>
-                {{!--  populate options from  --}}
-                {{> typesandtags tags}}
+                {{!-- strategy, mystery, guessing, social, drinking, luck --}}
+                <option value="Strategy">Strategy</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Guessing">Guessing</option>
+                <option value="Social">Social</option>
+                <option value="Drinking">Drinking</option>
+                <option value="Luck">Luck</option>
             </select><br>
 
             <input type="submit" value="Add Game">
