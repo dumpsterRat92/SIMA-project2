@@ -110,13 +110,13 @@ button:hover {
 }
 
 .modal-content {
-    background: #34343471; /* Semi-transparent dark background */
+    background: #343434d9; /* Semi-transparent dark background */
     color: #646464; /* Medium gray text color */
     margin: 5% auto; /* Centered with 5% margin from top and bottom */
     padding: 20px; /* Padding inside the content box */
     border: 1px solid #888; /* Gray border */
     border-radius: 30px; /* Rounded corners */
-    width: 70%; /* 70% of the parent's width */
+    width: 40%; /* 70% of the parent's width */
 }
 
 .modal-close-btn {
@@ -140,9 +140,12 @@ form {
     display: flex;
     flex-direction: column;
 }
+#addGameForm {
+    width: 60%;
+}
 #players {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 50%;
 }
 
@@ -153,7 +156,7 @@ label {
 
 input[type="text"], input[type="password"], input[type="number"], select {
     width: 60%;
-    margin: 0 20px 0 20px;
+    margin: 0 10px 0 10px;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -178,23 +181,28 @@ input[type="submit"]:hover {
 br {
     margin-bottom: 10px;
 }
-
+#filterBy{
+    width: 150px;
+}
 /* Gamelist Styles */
 #gamelist {
     display: flex;
     width: 100%;
     flex-direction: column;
 } 
-
-#gamelist .game-card{
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width */
+    gap: 10px;}
+.game-card{
     background: #34343471; 
     color: rgba(219, 219, 219, 0.865);
-    display: flex;
+    display: grid;
     width: 100%;
-    flex-direction: row;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    justify-items: center;
     align-items: center;
-    justify-content: space-around;
-    flex-grow: 1;
     border-radius: 30px;
 } 
 

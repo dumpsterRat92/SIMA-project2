@@ -4,6 +4,22 @@
 {{!-- add a new game button --}}
     <div class="add-game-container">
         <button id="addGameBtn">Add New Game</button>
+        <button id="pickGameBtn">Game Picker!</button>
+        <button id="refreshBtn">Refresh Games</button>
+    </div>
+    <select id="filterBy">
+        <option value="name">Name</option>
+        <option value="playerCount">Player Count</option>
+        <option value="gameType">Game Type</option>
+        <option value="tag">Tag</option>
+    </select>
+    
+    <div id="gamelist-header" class="game-card">
+        <h3>Game Name</h3> <!-- Display the game name dynamically from data -->
+        <h3>Number of Players</h3> <!-- Display the range of minimum to maximum players -->
+        <h3>Game Type</h3> <!-- Display the type of game -->
+        <h3>Tag</h3> <!-- Display a tag associated with the game -->
+        <h3>Buttons of Doom</h3>
     </div>
     <div id="gamelist">
         {{> game games}}
@@ -57,6 +73,45 @@
         </form>
     </div>
 </div>
+<div id="pickGameModal" class="modal">
+    <div class="modal-content">
+    <button id="pickGameCloseModal" class="modal-close-btn">Exit</button>
+        <h2>Game Picker</h2>
+        <form id="pickGameForm">
+            <label for="playerCount">You need a game for
+            <input type="number" id="playerCount" name="playerCount"> players</label> 
+            
+            <label for="type"> Your players would like to play a 
+            <select id="picktype" name="type">
+                {{!-- card, board, party, puzzle, video --}}
+                <option value="" disabled selected>Select</option>
+                <option value="Card">Card</option>
+                <option value="Board">Board</option>
+                <option value="Party">Party</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Video">Video</option>
+            </select> game
+            </label>
+
+            <label for="tags">Your players want a game with </label>
+            <select id="picktag" name="tags">
+                {{!-- strategy, mystery, guessing, social, drinking, luck --}}
+                <option value="" disabled selected>Select</option>
+                <option value="Strategy">Strategy</option>
+                <option value="Mystery">Mystery</option>
+                <option value="Guessing">Guessing</option>
+                <option value="Social">Social</option>
+                <option value="Drinking">Drinking</option>
+                <option value="Luck">Luck</option>
+            </select>
+
+            <input type="submit" value="Show Me Games">
+        </form>
+        <button id="random">Random Game!</button>
+    </div>
+</div>
 {{!-- js file when pressed button --}}
 <script src="./assets/js/script.js"></script>
+<script src="./assets/js/gamePicker.js"></script>
+<script src="./assets/js/filter.js"></script>
 {{!-- list of all added games  --}}
