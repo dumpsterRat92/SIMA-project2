@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3001; // Set the port from environment or defau
 const sess = {
     name: 'billyBob', // Session identifier name
     secret: 'Super secret', // Secret used to sign the session ID cookie
-    cookie: { maxAge: 60000 }, // Cookie options, setting expiration to 60 seconds
+    cookie: { maxAge: 5* 60 * 1000 }, // Cookie options, setting expiration to 5 minutes
     resave: false, // Don't save session if unmodified
     saveUninitialized: false, // Don't create session until something stored
     rolling: false, // Don't force a session identifier cookie to be set on every response

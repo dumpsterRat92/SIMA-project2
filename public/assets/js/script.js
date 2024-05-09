@@ -129,7 +129,7 @@ if (path === '/' || path.includes('gamepad')) {
 // Add the determined class to the body's class list
 document.body.classList.add(className);
     // Continuously checks the session status every minute
-    setInterval(checkSessionStatus, 1 * 60 * 1000)
+    setInterval(checkSessionStatus, 5 * 60 * 1000)
 
     // Closes
 });
